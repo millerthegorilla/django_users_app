@@ -1,0 +1,25 @@
+<!--users/templates/registration/login.html-->
+
+{% extends 'base.html' %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% block content %}
+<h2>Login</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Login">
+</form>
+
+<a href="{% url 'users:password_reset' %}?next={% url 'users:login' %}">Reset password</a>
+<a href="{% url 'users:register' %}">Register</a>
+{% endblock %}
+
