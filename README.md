@@ -42,3 +42,5 @@ MIDDLEWARE = [
 
 6. Visit http://127.0.0.1:8000/users/accounts/login to register/login.
 
+You can incorporate the tests in your project by defining a file 'tests.py' in your project directory, and including the following line in that file...
+```from django_users_app.tests import *```
