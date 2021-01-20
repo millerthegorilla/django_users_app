@@ -18,11 +18,13 @@ You can install this package from source....   don't forget to use either a virt
 ## Quick Start
 
 
-1. Add "django_users_app" to your INSTALLED_APPS setting like this::
+1. Add "django_users_app", as well as the dependencies, to your INSTALLED_APPS setting like this::
 ```
 INSTALLED_APPS = [
     ...
-    'django_users_app', 
+    'django_users_app',
+    'django_email_validation',
+    'captcha'
 ]
 ```
 2. Add the django_user_app middleware to your project to force a superuser to reauthenticate if they access the admin panel after being logged in as a user.
